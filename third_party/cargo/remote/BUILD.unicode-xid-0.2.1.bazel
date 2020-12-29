@@ -19,7 +19,7 @@ load("@bazel_skylib//lib:selects.bzl", "selects")
 package(default_visibility = [
     # Public for visibility by "@raze__crate__version//" targets.
     #
-    # Prefer access through "//", which limits external
+    # Prefer access through "//third_party/cargo", which limits external
     # visibility to explicit Cargo.toml dependencies.
     "//visibility:public",
 ])
@@ -30,14 +30,8 @@ licenses([
 
 # Generated Targets
 
-# Unsupported target "decode" with type "example" omitted
-
-# Unsupported target "enum_external" with type "example" omitted
-
-# Unsupported target "toml2json" with type "example" omitted
-
 rust_library(
-    name = "toml",
+    name = "unicode_xid",
     srcs = glob(["**/*.rs"]),
     crate_features = [
         "default",
@@ -45,7 +39,7 @@ rust_library(
     crate_root = "src/lib.rs",
     crate_type = "lib",
     data = [],
-    edition = "2018",
+    edition = "2015",
     rustc_flags = [
         "--cap-lints=allow",
     ],
@@ -53,11 +47,10 @@ rust_library(
         "cargo-raze",
         "manual",
     ],
-    version = "0.5.8",
+    version = "0.2.1",
     # buildifier: leave-alone
     deps = [
-        "@raze__serde__1_0_118//:serde",
     ],
 )
 
-# Unsupported target "enum_external_deserialize" with type "test" omitted
+# Unsupported target "exhaustive_tests" with type "test" omitted

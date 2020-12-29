@@ -19,7 +19,7 @@ load("@bazel_skylib//lib:selects.bzl", "selects")
 package(default_visibility = [
     # Public for visibility by "@raze__crate__version//" targets.
     #
-    # Prefer access through "//", which limits external
+    # Prefer access through "//third_party/cargo", which limits external
     # visibility to explicit Cargo.toml dependencies.
     "//visibility:public",
 ])
@@ -30,11 +30,14 @@ licenses([
 
 # Generated Targets
 
+# Unsupported target "build-script-build" with type "custom-build" omitted
+
 rust_library(
-    name = "unicode_xid",
+    name = "serde",
     srcs = glob(["**/*.rs"]),
     crate_features = [
         "default",
+        "std",
     ],
     crate_root = "src/lib.rs",
     crate_type = "lib",
@@ -47,10 +50,8 @@ rust_library(
         "cargo-raze",
         "manual",
     ],
-    version = "0.2.1",
+    version = "1.0.118",
     # buildifier: leave-alone
     deps = [
     ],
 )
-
-# Unsupported target "exhaustive_tests" with type "test" omitted

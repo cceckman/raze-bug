@@ -19,26 +19,31 @@ load("@bazel_skylib//lib:selects.bzl", "selects")
 package(default_visibility = [
     # Public for visibility by "@raze__crate__version//" targets.
     #
-    # Prefer access through "//", which limits external
+    # Prefer access through "//third_party/cargo", which limits external
     # visibility to explicit Cargo.toml dependencies.
     "//visibility:public",
 ])
 
 licenses([
-    "notice",  # BSD-3-Clause from expression "BSD-3-Clause"
+    "notice",  # MIT from expression "MIT OR Apache-2.0"
 ])
 
 # Generated Targets
 
+# Unsupported target "decode" with type "example" omitted
+
+# Unsupported target "enum_external" with type "example" omitted
+
+# Unsupported target "toml2json" with type "example" omitted
+
 rust_library(
-    name = "num_enum_derive",
+    name = "toml",
     srcs = glob(["**/*.rs"]),
     crate_features = [
-        "proc-macro-crate",
-        "std",
+        "default",
     ],
     crate_root = "src/lib.rs",
-    crate_type = "proc-macro",
+    crate_type = "lib",
     data = [],
     edition = "2018",
     rustc_flags = [
@@ -48,12 +53,11 @@ rust_library(
         "cargo-raze",
         "manual",
     ],
-    version = "0.5.1",
+    version = "0.5.8",
     # buildifier: leave-alone
     deps = [
-        "@raze__proc_macro2__1_0_24//:proc_macro2",
-        "@raze__proc_macro_crate__0_1_5//:proc_macro_crate",
-        "@raze__quote__1_0_8//:quote",
-        "@raze__syn__1_0_56//:syn",
+        "@raze__serde__1_0_118//:serde",
     ],
 )
+
+# Unsupported target "enum_external_deserialize" with type "test" omitted

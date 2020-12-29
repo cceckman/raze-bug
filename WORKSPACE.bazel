@@ -16,7 +16,7 @@ rust_repositories()
 # NOTE: cargo-raze's README.md says to use //cargo:crates.bzl:
 # load("//cargo:crates.bzl", "raze_fetch_remote_crates")
 
-# The actual path is just :crates.bzl:
-load("//:crates.bzl", "raze_fetch_remote_crates")
+# The path should be based on whatever the `workspace_path` is.
+load("//third_party/cargo:crates.bzl", "raze_fetch_remote_crates")
 
 raze_fetch_remote_crates()

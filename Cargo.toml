@@ -3,7 +3,7 @@ members = ["alib"]
 
 [workspace.metadata.raze]
 # Workspace-relative path containing Cargo.toml.
-workspace_path = "//"
+workspace_path = "//third_party/cargo"
 
 # Aliases will be registered in this directory, relative to each Cargo crate root.
 package_aliases_dir = "./cargo"
