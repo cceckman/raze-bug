@@ -1,0 +1,15 @@
+[workspace]
+members = ["alib"]
+
+[workspace.metadata.raze]
+# Workspace-relative path containing Cargo.toml.
+workspace_path = "//"
+
+# Aliases will be registered in this directory, relative to each Cargo crate root.
+package_aliases_dir = "./cargo"
+
+# The set of targets to generate BUILD rules for.
+targets = [ "x86_64-unknown-linux-gnu" ]
+
+genmode = "Remote"
+
